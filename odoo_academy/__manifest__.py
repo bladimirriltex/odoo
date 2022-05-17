@@ -2,25 +2,33 @@
 
 {
     'name': 'Odoo Academy',
+    
     'summary': """Academy app to manage Training""",
-    'description':"""
-        Academy Module to mana Training:
-            -Courses
-            -Sessions
-            -Attendees
-    """,
+
+    'description': """
+        Academy Module to manage Training:
+        - Courses
+        - Sessions
+        - Attendees
+        """,
+    
     'author': 'Odoo',
-    'website': 'https://odoo.com',
+    
+    'website': 'https://www.odoo.com',
+    
     'category': 'Training',
-    'version':'0.1',
-    'depends':['base'],
-    'data':[
+    'version': '0.1',
+    
+    'depends': ['base'],
+    
+    'data': [
         'security/academy_security.xml',
         'security/ir.model.access.csv',
         'views/academy_menuitems.xml',
-        'views/course_views.xml',
     ],
-    'demo':[
+    'demo': [
         'demo/academy_demo.xml',
     ],
+    #Add license to remove License Warning
+    'license': 'OPL-1'
 }
