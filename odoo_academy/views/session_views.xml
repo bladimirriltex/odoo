@@ -7,17 +7,15 @@
             <field name="arch" type="xml">
                 <form string="Session Form">
                     <sheet>
-                        <h1><field name="name"/></h1>
+                       <h1><field name="name"/></h1>
                         <group>
-                            <group>
-                                <field name="course_id"/>
-                                <field name="instructor_id"/>
-                            </group>
-                            <group>
-                                <field name="start_date"/>
-                                <field name="end_date"/>
-                                <field name="duration"/>
-                            </group>
+                            <field name="course_id"/>
+                            <field name="instructor_id"/>
+                        </group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="duration"/>
                         </group>
                         <notebook>
                             <page string="Students">
@@ -36,12 +34,11 @@
                 <tree string="Session List">
                     <field name="name"/>
                     <field name="instructor_id"/>
-
                 </tree>
             </field>
-        </record>  
-        
-         <record model="ir.ui.view" id="session_view_calendar">
+        </record>
+
+        <record model="ir.ui.view" id="session_view_calendar">
             <field name="name">academy.session.calendar</field>
             <field name="model">academy.session</field>
             <field name="arch" type="xml">
@@ -50,10 +47,13 @@
                           date_stop="end_date"
                           color="instructor_id"
                           mode="month">
+                    <field name="name"/>
+                    <!--TO ADD THE FILTERS IN THE CALENDAR VIEW WE NEED TO ADD THE ATTRIBUTE FILTERS='1' TO ALSO ADD THE RECORD IMAGE WE USE THE "AVATAR_FIELD" ATTRIBUTE
                     <field name="instructor_id"/>
+                    -->
+                    <field name="instructor_id" filters='1' avatar_field='avatar_128'/>
                 </calendar>
             </field>
-        </record>  
-
+        </record>
     </data>
-</odoo> 
+</odoo>
