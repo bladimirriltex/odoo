@@ -9,14 +9,11 @@
                 <xpath expr="//field[@name='payment_term_id']" position="after">
                     <field name="session_id"/>
                 </xpath>
-                
                 <field name="partner_id" position="before">
-                    <field name="instructor_id" attrs="{'invisible':[('session_id','=',False)]}"/>
-                    
+                    <field name="instructor_id" attrs="{'invisible':[('session_id','=', False)]}"/>
                 </field>
-                
                 <xpath expr="//sheet//notebook" position="inside">
-                    <page string="Students" attrs="{'invisible':[('session_id','=',False)]}">
+                    <page string="students" attrs="{'invisible':[('session_id','=', False)]}">
                         <field name="student_ids">
                             <tree>
                                 <field name="name"/>
@@ -24,9 +21,8 @@
                             </tree>
                         </field>
                     </page>
-                </xpath>    
+                </xpath>
             </field>
         </record>
-
     </data>
 </odoo>
